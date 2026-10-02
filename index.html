@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeGolf - 몽글몽글 스크린 조인</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (귀여운 둥근 폰트: Poor Story 또는 Noto Sans KR) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- React & ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poor Story', 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-purple-100 flex justify-center items-center min-h-screen m-0">
+    <div id="root" class="w-full max-w-md shadow-2xl bg-amber-50 min-h-screen relative overflow-hidden flex flex-col"></div>
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="min-h-screen pb-28 relative flex flex-col bg-[#F9F8F6]">
+                    {/* 상단 헤더 */}
+                    <header className="bg-white/90 backdrop-blur-md px-5 py-4 flex items-center justify-between border-b border-orange-100 sticky top-0 z-20 shadow-xs">
+                        <div className="flex items-center space-x-2">
+                            <span className="bg-purple-600 text-white text-xs font-black px-2.5 py-1 rounded-full shadow-sm">WE</span>
+                            <span className="font-black tracking-wider text-purple-900 text-xl">GOLF ⛳</span>
+                        </div>
+                        <button className="bg-lime-300 text-purple-900 text-xs font-black px-4 py-2 rounded-full shadow-sm hover:bg-lime-400 transition">
+                            앱 다운로드 ✨
+                        </button>
+                    </header>
+
+                    {/* 지역 선택 및 필터 바 */}
+                    <div className="bg-white px-5 py-3.5 flex items-center justify-between border-b border-orange-100 shadow-xs mx-4 mt-4 rounded-2xl">
+                        <div className="flex items-center space-x-1.5 text-purple-900 font-bold text-base">
+                            <span>📍</span>
+                            <select className="bg-transparent font-black text-purple-900 outline-none cursor-pointer">
+                                <option>강남구</option>
+                                <option>판교</option>
+                                <option>분당구</option>
+                            </select>
+                        </div>
+                        <span className="text-xs bg-purple-100 text-purple-700 font-bold px-3 py-1.5 rounded-full">
+                            🔥 실시간 번개 핫플
+                        </span>
+                    </div>
+
+                    {/* 홍보 배너 */}
+                    <div className="p-4">
+                        <div className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-5 rounded-3xl shadow-md relative overflow-hidden">
+                            <h2 className="font-black text-lg mb-1">내 근처 스크린 골프 번개 ⚡</h2>
+                            <p className="text-xs text-purple-100 font-medium">심심할 때 가볍게 친구 만들고 스크린 한 판 어때요?</p>
+                        </div>
+                    </div>
+
+                    {/* 실시간 번개 리스트 섹션 */}
+                    <div className="px-4 space-y-4 flex-1">
+                        <div className="text-xs font-black text-purple-400 tracking-wider px-1">오늘의 추천 조인 💛</div>
+                        
+                        {/* 카드 1 */}
+                        <div className="bg-white p-5 rounded-3xl shadow-sm border-2 border-purple-100 hover:shadow-md transition">
+                            <div className="flex justify-between items-start mb-2">
+                                <div className="space-x-1.5">
+                                    <span className="text-[11px] bg-lime-100 text-lime-800 px-2.5 py-1 rounded-full font-bold">🍻 치맥/뒤풀이</span>
+                                    <span className="text-[11px] bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full font-bold">💸 핸디 내기</span>
+                                </div>
+                                <span className="text-xs font-black text-rose-500">오늘 20:00</span>
+                            </div>
+                            <h3 className="font-black text-purple-900 text-base mb-1">역삼동 스크린골프 조인하실 분!</h3>
+                            <p className="text-xs text-gray-500 mb-4 font-medium flex items-center space-x-1">
+                                <span>📍</span><span>강남 골프존 파크 역삼점</span>
+                            </p>
+                            
+                            <div className="flex justify-between items-center pt-3 border-t border-purple-50">
+                                <div className="text-xs text-gray-600 font-medium">현재 참여: <strong className="text-purple-900 font-black">남 2 / 여 1</strong></div>
+                                <button className="bg-purple-900 text-white text-xs font-black px-4 py-2 rounded-2xl shadow-sm hover:bg-purple-800 transition">
+                                    참여 신청 🙋‍♀️
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* 카드 2 */}
+                        <div className="bg-white p-5 rounded-3xl shadow-sm border-2 border-purple-100 hover:shadow-md transition">
+                            <div className="flex justify-between items-start mb-2">
+                                <div className="space-x-1.5">
+                                    <span className="text-[11px] bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full font-bold">☕ 커피 내기</span>
+                                </div>
+                                <span className="text-xs font-black text-gray-400">내일 14:30</span>
+                            </div>
+                            <h3 className="font-black text-purple-900 text-base mb-1">판교 직장인 주말 스크린 모임</h3>
+                            <p className="text-xs text-gray-500 mb-4 font-medium flex items-center space-x-1">
+                                <span>📍</span><span>판교 프렌즈스크린</span>
+                            </p>
+                            
+                            <div className="flex justify-between items-center pt-3 border-t border-purple-50">
+                                <div className="text-xs text-gray-600 font-medium">현재 참여: <strong className="text-purple-900 font-black">남 1 / 여 2</strong></div>
+                                <button className="bg-purple-900 text-white text-xs font-black px-4 py-2 rounded-2xl shadow-sm hover:bg-purple-800 transition">
+                                    참여 신청 🙋‍♂️
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 하단 고정 CTA */}
+                    <div className="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-4 bg-white/90 backdrop-blur-md border-t border-purple-100 shadow-xl">
+                        <button className="w-full bg-lime-300 text-purple-900 font-black py-4 rounded-2xl shadow-md text-sm hover:bg-lime-400 transition flex items-center justify-center space-x-2">
+                            <span>⚡ 3초 만에 내 번개 모임 만들기!</span>
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
